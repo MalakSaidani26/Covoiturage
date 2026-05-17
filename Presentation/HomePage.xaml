@@ -1,0 +1,119 @@
+﻿<Page x:Class="Presentation.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="#1E1E2F"
+      Opacity="0">
+
+    <!-- Animation -->
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Page.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                     From="0" To="1"
+                                     Duration="0:0:0.5"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
+
+    <!--  Styles -->
+    <Page.Resources>
+
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Opacity" Value="0.85"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+    </Page.Resources>
+
+    <!-- UI -->
+    <Grid>
+
+        <!-- Background Gradient -->
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#1E1E2F" Offset="0"/>
+                <GradientStop Color="#3A0CA3" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- LEFT SIDE -->
+        <StackPanel VerticalAlignment="Center" Margin="60">
+
+            <TextBlock Text="🚗 Covoiturage"
+                       FontSize="38"
+                       FontWeight="Bold"
+                       Foreground="White"
+                       Margin="0,0,0,20"/>
+
+            <TextBlock Text="Voyagez facilement et partagez vos trajets en toute simplicité."
+                       FontSize="16"
+                       Foreground="LightGray"
+                       TextWrapping="Wrap"
+                       Width="300"/>
+
+        </StackPanel>
+
+        <!-- RIGHT SIDE CARD -->
+        <Border Grid.Column="1"
+                Width="350"
+                Height="300"
+                CornerRadius="15"
+                Background="#2C2C3E"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Padding="30">
+
+            <!-- Shadow -->
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="15"
+                                  ShadowDepth="5"
+                                  Opacity="0.4"/>
+            </Border.Effect>
+
+            <StackPanel>
+
+                <TextBlock Text="Bienvenue"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           Margin="0,0,0,20"
+                           HorizontalAlignment="Center"/>
+
+                <!-- Login -->
+                <Button Content="Se connecter"
+                        Background="#3A86FF"
+                        Click="Login_Click"/>
+
+                <!-- Register -->
+                <Button Content="Créer un compte"
+                        Background="#8338EC"
+                        Click="Register_Click"/>
+
+                <!-- Exit -->
+                <Button Content="Quitter"
+                        Background="#EF233C"
+                        Click="Exit_Click"/>
+
+            </StackPanel>
+
+        </Border>
+
+    </Grid>
+</Page>

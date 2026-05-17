@@ -1,0 +1,79 @@
+﻿<Page x:Class="Presentation.DashboardPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="#1E1E2F">
+
+    <ScrollViewer>
+        <StackPanel Margin="25">
+
+            <!-- TITLE -->
+            <TextBlock Text="📊 Dashboard Conducteur"
+                       Foreground="White"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       Margin="0,0,0,20"/>
+
+            <!-- STATS GRID -->
+            <WrapPanel>
+
+                <!-- CA -->
+                <Border Background="#3A86FF" CornerRadius="12" Padding="20" Margin="10">
+                    <StackPanel>
+                        <TextBlock Text="💰 Revenu Total" Foreground="White"/>
+                        <TextBlock x:Name="txtCA" Foreground="White" FontSize="22" FontWeight="Bold"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- MOIS -->
+                <Border Background="#8338EC" CornerRadius="12" Padding="20" Margin="10">
+                    <StackPanel>
+                        <TextBlock Text="📅 Revenu Mois" Foreground="White"/>
+                        <TextBlock x:Name="txtMois" Foreground="White" FontSize="22" FontWeight="Bold"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- TOTAL RES -->
+                <Border Background="#06D6A0" CornerRadius="12" Padding="20" Margin="10">
+                    <StackPanel>
+                        <TextBlock Text="📦 Réservations" Foreground="White"/>
+                        <TextBlock x:Name="txtTotalRes" Foreground="White" FontSize="22" FontWeight="Bold"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- CONFIRME -->
+                <Border Background="#2ECC71" CornerRadius="12" Padding="20" Margin="10">
+                    <StackPanel>
+                        <TextBlock Text="✔ Confirmées" Foreground="White"/>
+                        <TextBlock x:Name="txtConfirme" Foreground="White" FontSize="22"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- EN ATTENTE -->
+                <Border Background="#FFBE0B" CornerRadius="12" Padding="20" Margin="10">
+                    <StackPanel>
+                        <TextBlock Text="⏳ En attente" Foreground="Black"/>
+                        <TextBlock x:Name="txtAttente" Foreground="Black" FontSize="22"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- REFUSE -->
+                <Border Background="#EF233C" CornerRadius="12" Padding="20" Margin="10">
+                    <StackPanel>
+                        <TextBlock Text="❌ Refusées" Foreground="White"/>
+                        <TextBlock x:Name="txtRefuse" Foreground="White" FontSize="22"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- TRAJETS -->
+                <Border Background="#118AB2" CornerRadius="12" Padding="20" Margin="10">
+                    <StackPanel>
+                        <TextBlock Text="🚗 Trajets" Foreground="White"/>
+                        <TextBlock x:Name="txtTrajets" Foreground="White" FontSize="22"/>
+                    </StackPanel>
+                </Border>
+
+            </WrapPanel>
+
+        </StackPanel>
+    </ScrollViewer>
+</Page>
